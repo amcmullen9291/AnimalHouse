@@ -66,9 +66,27 @@ nav, article {
   height: auto;
 }
 }
-
+/* 
 .pictures {
   height: 500px;
   width: 500px;
+} */
+
+.frame {
+  width: 300px;
+  height: 250px;
+  border: 3px solid #ccc;
+  background: #eee;
+  margin: auto;
+  padding: 15px 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.profile_button {
+  background-color: chartreuse;
 }
 © 2021 GitHub, Inc.
