@@ -10,10 +10,12 @@ class BreedsController < ApplicationController
     end
 
     def create 
-        if @breed.create(breed_params)
-            redirect breeds_path
+        @breed = Breed.new(breed_params)
+        if @breed.save     
+            redirect_to breeds_path
         else
             render :new
+            flash[:notice] ="profile not saved. Please try again"
         end 
     end
 
@@ -21,14 +23,16 @@ class BreedsController < ApplicationController
     end
 
     def update 
+        @breed.avatar.attach(params[:avatar])
         if @breed.update(breed_params)
-            redirect breeds_path
+            redirect_to breed_path(@breed)
         else
             render :edit
         end
     end 
 
     def show 
+        @breed = Breed.find(params[:id])
 
     end 
 
@@ -46,6 +50,6 @@ class BreedsController < ApplicationController
     end
 
     def breed_params 
-        params.require(:breed).permit(:name, :hair_length, :height, :temperment, :weight, :group, :notes)
+        params.require(:breed).permit(:name, :hair_length, :height, :temperment, :weight, :group, :notes, :avatar)
     end
 end 

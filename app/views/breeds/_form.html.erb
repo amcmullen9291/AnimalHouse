@@ -1,30 +1,15 @@
 
-<% form_with(model: @breed) do |f| %>
-    <%= f.label "Breed Name" %>
-    <%= f.text_field :name %>
-    <%= f.label "Hair Length" %>
-    <%= f.text_field :hair_length %>
-    <%= f.label "Temperment" %>
-    <%= f.text_field :temperment %>
-    <%= f.label "Average Height" %>
-    <%= f.text_field :height %>
-    <%= f.label "Average Weight" %>
-    <%= f.text_field :weight %>
-    <%= f.label "additional notes:" %>
-    <%= f.text_area :notes %>
-
-    <%= f.submit %>
-  <% end %>
-
   <%= form_with model: @breed do |form| %>
-    Breed Name:<%= form.select :name, [["Affenpinscher", "1"], ["Biewer Terrier", "2"], ["Brussels Griffon", "3"]] %> <br>
-    Hair Length:<%= form.select :hair_length, [["Short-haired", "1"], ["Medium Length Hair", "2"], ["Long-haired", "3"]] %>
+      Breed Name:<%= form.select :name, [["Affenpinscher"], ["Biewer Terrier"], ["Brussels Griffon"], ["Cavalier King Charles Spaniel"], ["Chihuahua"], ["Chinese Crested"], ["English Toy Spaniel"], ["Havanese"], ["Italian Greyhound"]] %> <br>
+    Hair Length:<%= form.select :hair_length, [["Short-haired"], ["Medium Length Hair"], ["Long-haired"]] %>
  <br>
     Temperment:<%= form.text_field :temperment  %><br>
-    Average Height: <%= form.text_field :temperment  %><br>
-    Average Weight:<%= form.text_field :temperment  %><br>
+    Average Height: <%= form.text_field :height  %><br>
+    Average Weight:<%= form.text_field :weight  %><br>
 <p>-------------------------------------------------------</p>
-    <%= form.text_area :body, size: "60x10" %> <br>
+    <%= form.label "We will add a picture in the second step!" %><br>
+    <%= form.file_field :avatar %> <br>
+    <%= form.text_area :notes, size: "60x10" %> <br>
     Additional Notes <br> (max 500 words, please) <br>
     <%= form.submit "Add Breed" %>
   <% end %>

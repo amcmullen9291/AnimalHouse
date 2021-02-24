@@ -1,0 +1,19 @@
+<header>
+<h2><%= @breed.name%> </h2>
+</header>
+<section>
+<nav class="details">
+    <h3>With an average height of <%= @breed.height %>,</h3>
+    <h3> and weghing in at <%= @breed.weight %>,</h3>
+    <h3> This <%= @breed.hair_length %> cutie </h3>
+    <h3>is generally <%= @breed.temperment %></h3>
+</nav>
+<article>
+<p><%= @breed.notes %></p>
+<%if @breed.avatar.attached? %>
+    <image scr=<%=(url_for(@breed.avatar))%>">
+    <%end%>
+</article>
+
+
+<%=link_to "Update Information", edit_breed_path(@breed)%>
