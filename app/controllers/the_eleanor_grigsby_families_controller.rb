@@ -1,0 +1,2 @@
+class TheEleanorGrigsbyFamiliesController < ApplicationController
+end
