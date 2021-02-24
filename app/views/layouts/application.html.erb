@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pooch-eeez-mo!</title>
+    <%=stylesheet_link_tag 'application' %>'
+  </head>
+
+  <body class= "menu_bar">
+  <h1> Place holder </h1>
+  <h3>making room for things</h3>
+    <%= yield %>
+  </body>
+  <footer class= "menu_bar">
+  <%=link_to "index", breeds_path%><br>
+  <%=link_to "Add a Breed", new_breed_path%><br>
+  <%=link_to "Home Page", root_path%><br>
+
+  </footer>
+</html>
