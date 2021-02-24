@@ -5,16 +5,23 @@
     <%=stylesheet_link_tag 'application' %>'
   </head>
 
-  <body class= "menu_bar">
-  <h3> Eleanor Grigsby</h3>
+  <body class="">\
+  <header>
+  <h3> The Tiny Paws</h3>
 <br>
-  <h1> "Breeded Shelter" </h1>
+  <h1> Breeded Shelter </h1>
+  </header>
     <%= yield %>
   </body>
   <footer class= "menu_bar">
-  <%=link_to "index", breeds_path%><br>
-  <%=link_to "Add a Breed", new_breed_path%><br>
-  <%=link_to "Home Page", root_path%><br>
+  <%=link_to "Home", root_path%><br>
+
+  <%=link_to "Our Current Residents", breeds_path%>
+  <%=link_to "Add a Breed", new_breed_path%>
+  <%=link_to "Meet Our Staff", root_path%>  
+  <%=link_to "testimonials", root_path%>  
+  <%=link_to "Make an Appointment", root_path%>  
+
 
   </footer>
 </html>
