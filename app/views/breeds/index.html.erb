@@ -1,5 +1,5 @@
 <div class="tg-wrap">
 <%= @breeds.all.each do |breed| %>
-    <%= link_to "#{breed.name}", breed_path(breed) %>
-  <%end%>
+    <%=link_to "#{breed.name}", breed_path(breed)%>
+  <% end%>
 </div>

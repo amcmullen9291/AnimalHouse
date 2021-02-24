@@ -1,4 +1,4 @@
-
+<nav class = "details">
   <%= form_with model: @breed do |form| %>
       Breed Name:<%= form.select :name, [["Affenpinscher"], ["Biewer Terrier"], ["Brussels Griffon"], ["Cavalier King Charles Spaniel"], ["Chihuahua"], ["Chinese Crested"], ["English Toy Spaniel"], ["Havanese"], ["Italian Greyhound"]] %> <br>
     Hair Length:<%= form.select :hair_length, [["Short-haired"], ["Medium Length Hair"], ["Long-haired"]] %>
@@ -13,3 +13,4 @@
     Additional Notes <br> (max 500 words, please) <br>
     <%= form.submit "Add Breed" %>
   <% end %>
+  </nav>

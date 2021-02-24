@@ -2,18 +2,16 @@
 <h2><%= @breed.name%> </h2>
 </header>
 <section>
-<nav class="details">
     <h3>With an average height of <%= @breed.height %>,</h3>
     <h3> and weghing in at <%= @breed.weight %>,</h3>
     <h3> This <%= @breed.hair_length %> cutie </h3>
     <h3>is generally <%= @breed.temperment %></h3>
-</nav>
+    </section>
 <article>
 <p><%= @breed.notes %></p>
-<%if @breed.avatar.attached? %>
-    <image scr=<%=(url_for(@breed.avatar))%>">
-    <%end%>
+    <image src="<%=(url_for(@breed.avatar))%>" class="pictures"> 
 </article>
-
+<%=link_to "Make an appointment", the_eleanor_grigsby_families_path%>
 
 <%=link_to "Update Information", edit_breed_path(@breed)%>
+

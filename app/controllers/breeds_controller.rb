@@ -11,7 +11,9 @@ class BreedsController < ApplicationController
 
     def create 
         @breed = Breed.new(breed_params)
-        if @breed.save     
+        if @breed.save  
+            @breed.avatar.attach(params[:avatar])
+            @breed.save
             redirect_to breeds_path
         else
             render :new
@@ -23,10 +25,13 @@ class BreedsController < ApplicationController
     end
 
     def update 
-        @breed.avatar.attach(params[:avatar])
-        if @breed.update(breed_params)
-            redirect_to breed_path(@breed)
-        else
+        if @breed.avatar.attach(params[:avatar])
+            if @breed.update(breed_params)
+                redirect_to breed_path(@breed)
+            else
+                render :edit
+            end
+        else 
             render :edit
         end
     end 
