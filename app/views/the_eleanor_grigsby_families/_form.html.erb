@@ -1,0 +1,10 @@
+<nav class = "details">
+  <%= form_with model: @theEleanorGrigsbyFamily do |form| %>
+ <br>
+    First name: <%= form.text_field :first_name  %><br>
+    Last name:<%= form.text_field :last_name  %><br>
+    Title:<%= form.text_field :title  %><br>
+    <%= form.text_area :bio, size: "60x10" %> <br>
+    <%= form.submit "Add Employee" %>
+  <% end %>
+  </nav>

@@ -94,14 +94,35 @@ img {
   background-color: chartreuse;
 }
 
-/* .staff-intro.table{
-  width: 100%;
-  border: darkgreen;
-  border-style: ridge;
-  border-width: medium;
-}
-.staff-intro.td{
-  width: 33%;
-}  */
+#element1 {
 
-© 2021 GitHub, Inc.
+  width: 200px;
+
+  height: 200px;
+
+  background: green;
+
+}
+
+#element2 {
+
+  width: 200px;
+
+  height: 200px;
+
+  background:coral;
+
+}
+
+#element3 {
+
+  width: 200px;
+
+  height: 200px;
+
+  background:plum;
+
+  position: relative;
+
+}  
+  © 2021 GitHub, Inc.
