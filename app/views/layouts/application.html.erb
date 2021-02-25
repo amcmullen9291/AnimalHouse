@@ -11,6 +11,10 @@
 <br>
   <h1> Breeded Shelter </h1>
   </header>
+  <% if current_user %>
+  <li>Signed in as <%= @user.name %></li>
+  <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+<% end %>
     <%= yield %>
   </body>
   <footer class= "menu_bar">
