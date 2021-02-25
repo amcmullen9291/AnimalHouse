@@ -1,2 +1,4 @@
 class AppointmentsController < ApplicationController
+
+    
 end

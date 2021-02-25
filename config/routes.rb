@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get '/auth/twitter'
   delete '/logout', to: 'sessions#destroy'
 
-  get 'owners/comments', :to => 'owners#comments_index'
+  get '/comments', :to => 'owners#comments'
 end
