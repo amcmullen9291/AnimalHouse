@@ -30,6 +30,15 @@ background: #ccc;
 padding: 20px;
 }
 
+.details_plus {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+  border-style: groove;
+  border-color: crimson;
+  }
 /* Style the list inside the menu */
 nav ul {
 list-style-type: none;

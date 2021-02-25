@@ -1,0 +1,15 @@
+<nav class = "details_plus">
+  <%= form_with model: @owner do |form| %>
+    Your Full Name : <%= form.text_field :name  %><br>
+    Email Address : <%= form.text_field :email  %><br>
+    Confirm Email : <%= form.text_field :email_confirmation  %><br>
+
+    Create A Password : <%= form.text_field :password  %><br>
+    Confirm Password : <%= form.text_field :password_confirmation  %><br>
+    <%= form.label "I currently have one or more dogs" %>
+    <%= form.select :other_dogs, [["True"], ["False"]] %> <br>
+<br>
+    <small>And now, introductions!</small>
+    <%= form.submit "Continue"%>
+  <% end %>
+  </nav>
