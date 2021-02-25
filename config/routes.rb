@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :owners
   root to: "breeds#welcome"
-  resources :the_eleanor_grigsby_families do
+
+  resources :owners do 
+    member do 
+      get 'comment'  #will need a comments/index
+      post 'comment'
+    end
+  end 
+  resources :employees do
     member {resources :appointments}
   end 
   resources :breeds
@@ -10,4 +16,6 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/twitter'
   delete '/logout', to: 'sessions#destroy'
+
+  get 'owners/comments', :to => 'owners#comments_index'
 end

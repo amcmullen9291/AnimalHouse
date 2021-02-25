@@ -1,2 +1,0 @@
-class TheEleanorGrigsbyFamily < ApplicationRecord
-end
