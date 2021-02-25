@@ -30,7 +30,8 @@ background: #ccc;
 padding: 20px;
 }
 
-.details_plus {
+/* members sign in */
+.details_plus { 
   float: left;
   width: 30%;
   height: 300px; /* only for demonstration, should be removed */
@@ -92,5 +93,15 @@ img {
 .profile_button {
   background-color: chartreuse;
 }
+
+/* .staff-intro.table{
+  width: 100%;
+  border: darkgreen;
+  border-style: ridge;
+  border-width: medium;
+}
+.staff-intro.td{
+  width: 33%;
+}  */
 
 © 2021 GitHub, Inc.

@@ -11,9 +11,7 @@ class BreedsController < ApplicationController
 
     def create 
         @breed = Breed.new(breed_params)
-        if @breed.save  
-            @breed.avatar.attach(params[:avatar])
-            @breed.save
+        if @breed.save
             redirect_to breeds_path
         else
             render :new
@@ -35,10 +33,9 @@ class BreedsController < ApplicationController
             render :edit
         end
     end 
-
+    
     def show 
         @breed = Breed.find(params[:id])
-
     end 
 
     def destroy 
