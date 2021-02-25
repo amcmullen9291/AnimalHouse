@@ -10,7 +10,8 @@ box-sizing: border-box;
 
 body {
 font-family: Arial, Helvetica, sans-serif;
-}
+background: rgb(244,199,18);
+background: radial-gradient(circle, rgba(244,199,18,1) 37%, rgba(215,235,14,1) 56%, rgba(255,162,0,1) 73%);}
 
 /* Style the header */
 header {
