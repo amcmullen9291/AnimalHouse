@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :owners
   root to: "breeds#welcome"
   resources :the_eleanor_grigsby_families do
     member {resources :appointments}

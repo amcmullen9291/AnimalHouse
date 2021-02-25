@@ -6,7 +6,8 @@ class Breeds < ActiveRecord::Migration[6.1]
       t.string :temperment
       t.string :height
       t.string :weight
-      t.string :group
+      t.string :notes
+      t.string :group, default: "Toy Group"
     end 
   end
 end
