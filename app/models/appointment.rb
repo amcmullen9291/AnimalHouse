@@ -1,4 +1,4 @@
 class Appointment < ApplicationRecord
     has_many :breeds 
-    has_many_and_belongs_to :owners
+    has_and_belongs_to_many :owners
 end

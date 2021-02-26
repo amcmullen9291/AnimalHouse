@@ -2,5 +2,8 @@
      <%= @employee.first_name  %> <%= @employee.last_name  %><br>
     Title:<%= @employee.title  %><br>
     <%= @employee.bio %> <br>
-    <%=link_to "Schedule an Appointment", to: new_appointment_path(@employee)%><br>
+    <br>
+    <%=link_to "speak with #{@employee.first_name}", new_employee_appointment_path(@employee)%>  
+
+    
   </nav>

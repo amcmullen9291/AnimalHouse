@@ -1,5 +1,9 @@
 class EmployeesController < ApplicationController
     
+    def index 
+        @employee = Employee.all
+    end
+
     def new
         @employee = Employee.new
     end 
@@ -14,16 +18,16 @@ class EmployeesController < ApplicationController
         end 
     end 
 
-    def index 
-        @employee = Employee.all
-    end
+    def new_appointment 
+        @appointment = Appointment.new
+        render 'appointments/new'
+    end 
 
     def show 
         @employee = Employee.find(params[:id])
     end 
 
     def edit 
-        @employee = Employee.find(params([:id]))
     end 
 
     def update 
@@ -38,9 +42,6 @@ class EmployeesController < ApplicationController
         end
     end 
 
-    def new_appointment 
-        @employee = Employee.find(params[:id])
-    end 
 
 private
     def set_employee 
