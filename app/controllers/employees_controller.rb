@@ -48,8 +48,13 @@ private
         @breed = Breed.find(params[:id])
     end
 
+    def breed #may need corrected
+        @breeds = Breed.find(params[:breed_id])
+        @breeds.name
+    end
+
     def employee_params 
-        params.require(:employee).permit(:first_name, :last_name, :title, :bio, :avatar)
+        params.require(:employee).permit(:first_name, :last_name, :title, :bio, :avatar, breed_id)
     end
 
 

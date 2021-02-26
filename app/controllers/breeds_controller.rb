@@ -52,6 +52,6 @@ class BreedsController < ApplicationController
     end
 
     def breed_params 
-        params.require(:breed).permit(:name, :hair_length, :height, :temperment, :weight, :group, :notes, :avatar)
+        params.require(:breed).permit(:name, :hair_length, :height, :temperment, :weight, :group, :notes, :avatar, employee_id, :dogs_name )
     end
 end 
