@@ -2,7 +2,11 @@
 <html>
   <head>
     <title>Pooch-eeez-mo!</title>
-    <%=stylesheet_link_tag 'application' %>'
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
   <body>
@@ -20,7 +24,7 @@
   <footer class= "menu_bar">
   <%=link_to "Home", root_path%><br>
 
-  <%=link_to "Our Current Residents", breeds_path%>
+  <%=link_to "Select a breed", breeds_path%>
   <%=link_to "Add a Breed", new_breed_path%>
   <%=link_to "Meet Our Staff", employees_path%>  
   <%=link_to "testimonials", comments_path%>  

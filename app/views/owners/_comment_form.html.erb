@@ -1,0 +1,15 @@
+<nav class="details_plus">
+<%=form_with model: @owner do |f| %>
+    
+    <%=f.label :"Enter your email"%>
+    <%=f.text_field :email%> 
+    <small>Tell us about your experience with Small Paws.</small>
+    <%= f.text.area :comment, size: "60x10" %>%>
+    <b>==========================================</b>
+    <%=f.label :"Enter your email one more time"%>
+    <%=.text_field :email_confirmation%> 
+
+    Thanks!
+    <%=f.submit "Submit Review"%>
+<%end%>
+</nav>

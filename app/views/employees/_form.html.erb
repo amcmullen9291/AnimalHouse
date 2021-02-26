@@ -1,10 +1,6 @@
 <nav class = "details">
-  <%= form_with model: @employee do |form| %>
- <br>
-    First name: <%= form.text_field :first_name  %><br>
-    Last name:<%= form.text_field :last_name  %><br>
-    Title:<%= form.text_field :title  %><br>
-    <%= form.text_area :bio, size: "60x10" %> <br>
-    <%= form.submit "Join SPBS" %>
-  <% end %>
+     <%= @employee.first_name  %> <%= @employee.last_name  %><br>
+    Title:<%= @employee.title  %><br>
+    <%= @employee.bio %> <br>
+    <%=link_to "Schedule an Appointment", to: new_appointment_path(@employee)%><br>
   </nav>

@@ -1,3 +1,3 @@
 class Employee < ApplicationRecord
-    has_many_and_belongs_to :appointments 
+    has_and_belongs_to_many :appointments 
 end

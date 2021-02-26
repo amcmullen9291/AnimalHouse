@@ -1,0 +1,12 @@
+<nav class = "details">
+  <%= form_with model: @employee do |form| %>
+    First Name: <%= form.text_field :first_name  %><br>
+    Last Name:<%= form.text_field :last_name  %><br>
+    Title:<%= form.text_field :title  %><br>
+<p>-------------------------------------------------------</p>
+    <%= form.label "Staff Pic" %><br>
+    <%= form.file_field :avatar %> <br>
+    <%= form.text_area :bio, size: "60x10" %> <br>
+    <%= form.submit "Update Database" %>
+  <% end %>
+  </nav>

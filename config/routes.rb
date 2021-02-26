@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/twitter'
   delete '/logout', to: 'sessions#destroy'
-
+  get 'employee/:id/appointment/new', to: 'employees#new_appointment'
   get '/comments', :to => 'owners#comments'
 end

@@ -1,0 +1,5 @@
+<%=form_with model: @owner do |f| %>
+    <small><%=@owner.email%> said: <small> 
+    <small><%=@owner.comment%>. </small>
+    <small><%=@owner.last_updated%></small>
+<%end%>

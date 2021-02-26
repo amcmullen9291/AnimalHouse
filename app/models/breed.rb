@@ -4,6 +4,6 @@ class Breed < ApplicationRecord
     too_long: "%{count} characters is the maximum allowed" }
     has_one_attached :avatar
     has_many :appointments
-    has_many :owners through: appointments
+    has_many :owners, through: :appointments
 
 end

@@ -1,5 +1,15 @@
 <div class="tg-wrap">
 <%= @breeds.all.each do |breed| %>
-    <%=link_to "#{breed.name}", breed_path(breed)%>
+    <%=link_to "#{breed.name}", breed_path(breed), :confirm => "pluralize.#{breed.name} are wonderful!"%>
+    <br>
+    <%=breed.hair_length%><br>
+    <%=breed.height%> tall,
+    <%=breed.weight%>
+    <br/>    
+    <div class="frame">
+    <% if breed.avatar.attached?%>
+    <image src="<%=(url_for(breed.avatar))%>"> 
+    <% end%>
+    </div>
   <% end%>
 </div>
