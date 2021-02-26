@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_163457) do
+ActiveRecord::Schema.define(version: 2021_02_26_154039) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2021_02_25_163457) do
     t.string "weight"
     t.string "notes"
     t.string "group", default: "Toy Group"
+    t.string "dogs_name"
+    t.integer "employee_id"
   end
 
   create_table "employees", force: :cascade do |t|
