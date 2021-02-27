@@ -14,5 +14,5 @@
     <image src="<%=(url_for(@breed.avatar))%>"> 
     <% end%>
 </div>
-<%=link_to '<button class="profile_button" type="button">Schedule an appointment</button>'.html_safe, new_employee_appointment_path(@breed)%></article>
+<%=link_to '<button class="profile_button" type="button">Schedule an appointment</button>'.html_safe, new_employee_appointment_path(@breed.employee_id)%></article>
 </section>
