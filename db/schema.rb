@@ -41,12 +41,10 @@ ActiveRecord::Schema.define(version: 2021_02_26_213505) do
   end
 
   create_table "appointments", force: :cascade do |t|
-    t.integer "breed_id"
     t.integer "employee_id"
-    t.string "notes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "owner_id"
+    t.integer "breed_id"
+    t.string "notes"
   end
 
   create_table "breeds", force: :cascade do |t|
@@ -59,6 +57,16 @@ ActiveRecord::Schema.define(version: 2021_02_26_213505) do
     t.string "group", default: "Toy Group"
     t.string "dogs_name"
     t.integer "employee_id"
+  end
+
+  create_table "breeds_employees", id: false, force: :cascade do |t|
+    t.integer "breed_id", null: false
+    t.integer "employee_id", null: false
+    t.string "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["breed_id", "employee_id"], name: "index_breeds_employees_on_breed_id_and_employee_id"
+    t.index ["employee_id", "breed_id"], name: "index_breeds_employees_on_employee_id_and_breed_id"
   end
 
   create_table "employees", force: :cascade do |t|
