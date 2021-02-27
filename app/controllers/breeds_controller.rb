@@ -12,7 +12,13 @@ class BreedsController < ApplicationController
     def create 
         @breed = Breed.new(breed_params)
         if @breed.save
-            redirect_to breeds_path
+            @employee = Employee.find(params[:breed][:employee_id])
+            if @employee.breed_id.empty?
+                @employee.breed_id = @breed.employee_id
+            else
+
+            end
+                redirect_to breeds_path
         else
             render :new
             flash[:notice] ="profile not saved. Please try again"
@@ -54,4 +60,10 @@ class BreedsController < ApplicationController
     def breed_params 
         params.require(:breed).permit(:name, :hair_length, :height, :temperment, :weight, :group, :notes, :avatar, :employee_id, :dogs_name)
     end
+
+    def employee
+        @employee = @breed.employee
+        @employee.breed_id.build(:breed_id)
+        @employee.save
+    end 
 end 

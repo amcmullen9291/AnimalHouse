@@ -5,6 +5,5 @@ class Employee < ApplicationRecord
     validates :bio, length: { maximum: 1000,
     too_long: "%{count} characters is the maximum allowed" }
     has_one_attached :avatar
-    accepts_nested_attributes_for :breed_id
     
 end

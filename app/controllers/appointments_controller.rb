@@ -3,6 +3,7 @@ class AppointmentsController < ApplicationController
     def new
         @appointment = Appointment.new
         @employee= Employee.find(params[:employee_id])
+
     end
 
     def create 
