@@ -1,4 +1,6 @@
 class OwnersController < ApplicationController
+    skip_before_action :require_login, only: [:new, :create]
+
     def new 
         @owner = Owner.new
     end 
@@ -6,7 +8,7 @@ class OwnersController < ApplicationController
     def create 
         @owner = Owner.new(owner_params)
         if @owner.save 
-            redirect_to the_eleanor_grigsby_families_path
+            redirect_to employees_path
         else
             render :new
         end 

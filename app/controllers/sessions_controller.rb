@@ -1,18 +1,19 @@
 class SessionsController < ApplicationController
-    
+  skip_before_action :require_login, only: [:new, :create]
+
     
     def new 
     end 
     
     def create
-      @user = User.find_or_create_from_auth_hash(auth_hash)
-      session[:user_id] = @user.id
-      redirect_to breeds_path
+      @owner = Owner.find_by(email: params[:email])
+      return head(:forbidden) unless params[:password] == @owner.password
+      session[:owner_id] = @owner.id
     end
 
     def destroy
         if current_user
-          session.delete(:user_id)
+          session.delete(:uowner_id)
           flash[:success] = "Sucessfully logged out!"
         end
         redirect_to root_path

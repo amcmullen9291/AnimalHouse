@@ -1,5 +1,6 @@
 class BreedsController < ApplicationController
     before_action :set_breed, only: [ :show, :edit, :update, :destroy ]
+    skip_before_action :require_login, only: [:index, :welcome]
 
     def index 
         @breeds = Breed.all
@@ -12,13 +13,9 @@ class BreedsController < ApplicationController
     def create 
         @breed = Breed.new(breed_params)
         if @breed.save
-            @employee = Employee.find(params[:breed][:employee_id])
-            if @employee.breed_id.empty?
-                @employee.breed_id = @breed.employee_id
-            else
-
-            end
-                redirect_to breeds_path
+            @breed.avatar.attach(params[:avatar])
+            @breed.save
+            redirect_to breeds_path
         else
             render :new
             flash[:notice] ="profile not saved. Please try again"
