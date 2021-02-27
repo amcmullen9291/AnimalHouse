@@ -1,0 +1,36 @@
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@employee.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+ 
+    <ul>
+    <% @employee.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<nav class = "details_plus">
+  <%= form_with model: @employee do |form| %>
+    First Name : <%= form.text_field :first_name  %><br>
+    Last Name : <%= form.text_field :last_name  %><br>
+    
+    Title : <%= form.text_field :email  %><br>
+    Introduction : <%= form.text_area :bio, size: "45x8"  %><br>    
+<br>
+<section title=".slideTwo">
+    <bold>A Priv·i·leged Employee</bold>
+      <input type="checkbox" value="None" id="slideTwo" name="check" checked />
+      <label for="slideTwo"></label>
+  </section>
+  </nav>
+  <nav class="details_plus">
+    <%= form.label "Employee's Pic" %><br>
+    <%= form.file_field :avatar %> <br>
+<br>
+    <%= form.submit "Continue"%>
+  <% end %>
+  </nav>

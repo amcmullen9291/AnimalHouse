@@ -8,13 +8,13 @@ class EmployeesController < ApplicationController
         @employee = Employee.new
     end 
 
-    def create  
-    @employee = Employee.new(employee_params)
-         if @employee.save 
-            flash[:notice] = "Again, Welcome to Small Paws"
+    def create          
+        @employee = Employee.new(employee_params)
+        if @employee.save
             redirect_to employees_path
-         else
+        else
             render :new
+            flash[:notice] ="profile not saved. Please try again"
         end 
     end 
 
@@ -32,7 +32,7 @@ class EmployeesController < ApplicationController
 
     def update 
         if @employee.avatar.attach(params[:avatar])
-            if @employee.update(breed_params)
+            if @employee.update(employee_params)
                 redirect_to breed_path(@employee)
             else
                 render :edit
@@ -45,17 +45,15 @@ class EmployeesController < ApplicationController
 
 private
     def set_employee 
-        @breed = Breed.find(params[:id])
-    end
-
-    def breed #may need corrected
-        @breeds = Breed.find(params[:breed_id])
-        @breeds.name
+        @employee = Employee.find(params[:id])
     end
 
     def employee_params 
-        params.require(:employee).permit(:first_name, :last_name, :title, :bio, :avatar, breed_id)
+        params.require(:employee).permit(:first_name, :last_name, :title, :bio, :avatar, :breed_id => [])
     end
 
-
+    def employee_check 
+        set employee 
+        @employee.admin == true
+    end
 end

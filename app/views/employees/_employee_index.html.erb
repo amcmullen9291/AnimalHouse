@@ -1,10 +1,13 @@
 <% @employee.all.each do |employee|%>
     <div id= "element3" >
-    <%=link_to "#{employee.first_name} #{employee.last_name}", employee_path(employee), :confirm => "schedule an appointment with #{employee.first_name}."%>
+    <%=link_to "#{employee.first_name} #{employee.last_name} ", employee_path(employee), :confirm => "schedule an appointment with #{employee.first_name}."%>
     <br>
-    <%=image_tag("mugshot__farmer__burken.jpg")%> <br>
+    <div class="frame">
+    <% if employee.avatar.attached?%>
+    <image src="<%=(url_for(employee.avatar))%>"> 
+    <% end%>
+    </div>
     <%=employee.title%><br>
-    <%=employee.bio%>
     </div>
 
     <% end%>

@@ -1,8 +1,8 @@
 <section class="details_plus">
 <%= form_with model: @employee do |form| %>
     <center>Supply as much information about your solution possible.</center><br>
-    I am interested in adopting the baby: <%= form.select( :breed_id, [["Affenpinscher", "1"], ["Biewer Terrier", "2"], ["Brussels Griffon", "3"], ["Cavalier King Charles Spaniel", "4"], ["Chihuahua", "4"], ["Chinese Crested", "5"], ["English Toy Spaniel", "6"], ["Havanese", "7"], ["Italian Greyhound", "8"]], {:include_blank => 'Choose a Breed'})%> <br>
-  <%= form.text_area :notes, size: "50x10" %> <br>
+    I am interested in adopting the baby: <%= form.select( :breed_id, [["Affenpinscher", "1"], ["Biewer Terrier", "2"], ["Brussels Griffon", "3"], ["Cavalier King Charles Spaniel", "4"], ["Chinese Crested", "5"]], {:include_blank => 'Choose a Breed'})%> <br>
+    <%= form.text_area :notes, size: "50x10" %> <br>
 
   <%= form.submit "Schedule appointment" %>
   <%end%>

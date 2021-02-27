@@ -1,7 +1,20 @@
+<% if @breed.errors.any? %>
+<div id="error_explanation">
+    <h2>
+      Please adjust <%= pluralize(@breed.errors.count, "error") %>
+    </h2>
+ 
+    <ul>
+    <% @breed.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
 <nav class = "details">
   <%= form_with model: @breed do |form| %>
-      Breed Name:<%= form.select :name, [["Affenpinscher"], ["Biewer Terrier"], ["Brussels Griffon"], ["Cavalier King Charles Spaniel"], ["Chihuahua"], ["Chinese Crested"], ["English Toy Spaniel"], ["Havanese"], ["Italian Greyhound"]] %> <br>
-    WHat is the dog's name? <%= form.text_field :dogs_name  %><br>
+      Breed:<%= form.select :name, [["Affenpinscher"], ["Biewer Terrier"], ["Brussels Griffon"], ["Cavalier King Charles Spaniel"], ["Chihuahua"], ["Chinese Crested"], ["English Toy Spaniel"], ["Havanese"], ["Italian Greyhound"]] %> <br>
+    Dogs name? <%= form.text_field :dogs_name  %><br>
       Hair Length:<%= form.select :hair_length, [["Short-haired"], ["Medium Length Hair"], ["Long-haired"]] %>
  <br>
     Temperment:<%= form.text_field :temperment  %><br>
