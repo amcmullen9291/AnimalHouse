@@ -190,4 +190,14 @@ img {
   width:fit-content;
   background-color: ivory;
 }
+input, textarea {
+  font    : 1.4em/1.5em "handwriting", cursive, sans-serif;
+  border  : none;
+  padding : 0 10px;
+  margin  : 0;
+  width   : 80%;
+  background:ivory;
+  size: "266x266";
+  position: static;
+}
   © 2021 GitHub, Inc.

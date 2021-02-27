@@ -1,0 +1,14 @@
+<h4>Profile Page</h4>
+
+<div class "details_plus">
+<%=@owner.name%> <br>
+
+<%= render 'comment_form' %>
+</div>
+
+<div class="details_plus">
+Your Contect Information:
+<br>
+<br>
+<%=link_to "edit your contact info", edit_owner_path(@owner)%>
+</div>

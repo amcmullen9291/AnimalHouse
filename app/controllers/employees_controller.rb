@@ -1,5 +1,4 @@
 class EmployeesController < ApplicationController
-    skip_before_action :require_login, only: [:index]
 
     def index 
         @session = session
@@ -56,6 +55,7 @@ private
 
     def employee_check 
         set employee 
-        @employee.admin == true
+        if @employee.admin == true
+        end
     end
 end

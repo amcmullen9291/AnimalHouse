@@ -1,6 +1,5 @@
 class BreedsController < ApplicationController
     before_action :set_breed, only: [ :show, :edit, :update, :destroy ]
-    skip_before_action :require_login, only: [:index, :welcome]
 
     def index 
         @breeds = Breed.all
@@ -58,9 +57,4 @@ class BreedsController < ApplicationController
         params.require(:breed).permit(:name, :hair_length, :height, :temperment, :weight, :group, :notes, :avatar, :employee_id, :dogs_name)
     end
 
-    def employee
-        @employee = @breed.employee
-        @employee.breed_id.build(:breed_id)
-        @employee.save
-    end 
 end 

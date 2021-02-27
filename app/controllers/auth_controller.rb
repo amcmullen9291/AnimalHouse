@@ -1,5 +1,5 @@
 class AuthController < ApplicationController
-    def twitter 
+    def google 
     end 
 
     def create 

@@ -1,13 +1,13 @@
 <nav class="details_plus">
 <%=form_with model: @owner do |f| %>
-    
+    <br>
     <%=f.label :"Enter your email"%>
-    <%=f.text_field :email%> 
+    <%=f.text_field :email%> <br>
     <small>Tell us about your experience with Small Paws.</small>
-    <%= f.text.area :comment, size: "60x10" %>%>
-    <b>==========================================</b>
-    <%=f.label :"Enter your email one more time"%>
-    <%=.text_field :email_confirmation%> 
+    <%= f.text_area :comments, size: "35x10" %>
+    <b>======================================</b>
+    <small> Comments will show the associated email address, <br>
+    but all other perosnal information will remain private</small><br>
 
     Thanks!
     <%=f.submit "Submit Review"%>

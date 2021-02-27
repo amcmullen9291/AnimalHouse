@@ -15,12 +15,6 @@
 <br>
   <h1> Breeded Shelter </h1>
   </header>
-  <% if current_user %>
-    <h3>Signed in as <%= @owner.name %></h3>
-    <small><%= link_to 'Log Out', logout_path, method: :delete %></small>
-  <%else%>
-    <h3>please sign in</h3>
-<% end %>
 
     <%= yield %>
   </body>

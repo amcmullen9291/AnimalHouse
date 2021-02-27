@@ -1,15 +1,12 @@
-<% if current_user %>
-<li>Signed in as <%= @user.name %></li>
-<li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-<% else %>
 Signin With Your Google Account,
 <li><%= link_to '<button class="a.button3" type="button">Sign In</button>'.html_safe, "/auth/twitter" %></li> 
 <br>
 Sign-in with your Small Paws Credentials:
-<li><%= link_to "Member Sign-In", login_path %></li>
+<li><%= link_to "Member Sign-In", root_path %></li>
 <br>
-OR,
 <li><%= link_to "Create a Small Paws Account", new_owner_path %></li>
-<% end %>
+<small>=============</small>
+<li><%= link_to 'Log Out', root_path %></li>
+
 <%= image_tag "Affenpinscher-copy.jpg"%>
 

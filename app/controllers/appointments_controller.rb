@@ -1,17 +1,14 @@
 class AppointmentsController < ApplicationController
 
     def new
-        return head(:forbidden) unless session.include? :user_id
         @appointment = Appointment.new
-        @employee= Employee.find(params[:employee_id])
 
     end
 
     def create 
-        @employee = Employee.find(params([:employee_id]))
         @appointment = Appointment.new(appointment_params)
-        if @appointment.save(appointment_params)
-            redirect_to root_path  #will need a thank you page. also do the email thing 
+        if @appointment.save
+            redirect_to employee_path (params[:appointment][:employee_id])
         else 
             render :new
         end
@@ -22,7 +19,9 @@ class AppointmentsController < ApplicationController
     end 
 
     private 
+
     def appointment_params
-        params.require(:appointment).permit(:employee_id, breed_id, :notes)
+        params.require(:appointment).permit(:employee_id, :owner_id, :breed_id, :notes)
     end
+
 end

@@ -3,8 +3,7 @@
     Title:<%= @employee.title  %><br>
     <%= @employee.bio %> <br>
     <br>
-    <%=link_to "speak with #{@employee.first_name}", new_employee_appointment_path(@employee)%>  
+    <%=link_to "speak with #{@employee.first_name}", root_path%>  
   </nav>
   <nav class="details_plus">
-    <%=@employee.breeds%>
     </nav>

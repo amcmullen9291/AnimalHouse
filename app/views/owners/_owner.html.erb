@@ -1,0 +1,12 @@
+<% form_for @owner do |f|%>
+    <%= f.label "Your name"%>
+    <%=f.text_field :name %>
+    <%= f.label "telephone number"%>
+    <%=f.text_field :telephone %>
+    <%= f.label "Email"%>
+    <%=f.text_field :email %>
+    <%= f.label "confirm email"%>
+    <%=f.text_field :email_confirmation %>
+
+    <h5>has other dogs? </h5><%=@owner.other_dogs%>
+    <%end%>
