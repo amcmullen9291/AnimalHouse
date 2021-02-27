@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :appointments
   end 
   resources :breeds
+  resources :sessions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'breeds/welcome'
   get 'owner/:id/appointment/new', to: 'employees#new_appointment'

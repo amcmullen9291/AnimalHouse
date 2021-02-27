@@ -5,10 +5,14 @@ class SessionsController < ApplicationController
     def new 
     end 
     
-    def create
-      @owner = Owner.find_by(email: params[:email])
-      return head(:forbidden) unless params[:password] == @owner.password
-      session[:owner_id] = @owner.id
+    def create 
+      @user = Owner.find_by(name: params[:user][:email])
+      if @user.email && @user.authenticate(params[:user][:password])
+          session[:user_id] = @owner[:id]
+          redirect_to welcome_path(@user)
+      else
+          render :'users/new'
+      end
     end
 
     def destroy
@@ -20,7 +24,10 @@ class SessionsController < ApplicationController
       end
   
     protected
-  
+    def user_params
+      params.require(:owner).permit(:email, :password)
+    end
+
     def auth_hash
       request.env['omniauth.auth']
     end

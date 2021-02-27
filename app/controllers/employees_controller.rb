@@ -2,6 +2,7 @@ class EmployeesController < ApplicationController
     skip_before_action :require_login, only: [:index]
 
     def index 
+        @session = session
         @employee = Employee.all
     end
 
